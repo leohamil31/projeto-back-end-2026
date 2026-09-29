@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastifico | Status do Pedido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .status-shell {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px 60px;
+      }
+
+      .status-card {
+        background: rgba(255,255,255,0.8);
+        border-radius: 28px;
+        border: 1px solid rgba(143,45,32,0.08);
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      .status-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .status-pill {
+        display: inline-block;
+        background: #f3e7dd;
+        color: var(--primary-dark);
+        border-radius: 999px;
+        padding: 9px 14px;
+        font-weight: 700;
+      }
+
+      .order-summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+        margin: 26px 0;
+      }
+
+      .summary-box {
+        background: #fffaf6;
+        border-radius: 16px;
+        padding: 18px;
+        border: 1px solid var(--line);
+      }
+
+      .summary-box label {
+        display: block;
+        font-size: 0.76rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08rem;
+      }
+
+      .summary-box strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.2rem;
+      }
+
+      .timeline {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .timeline li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fffaf6;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px 16px;
+      }
+
+      .timeline li.active {
+        background: #f7efe8;
+      }
+
+      .payment-note {
+        padding: 14px 18px;
+        border-radius: 12px;
+        background: #e7f2e9;
+        color: #235c38;
+        text-align: center;
+      }
+
+      .status-refresh-note {
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="status-shell">
+      <div class="status-card">
+        <div class="status-top">
+          <div>
+            <p class="eyebrow">Acompanhamento</p>
+            <h1 style="margin:0; color:var(--primary-dark);">Status do pedido</h1>
+          </div>
+          <a class="topbar-badge" href="/" style="text-decoration:none;">Novo pedido</a>
+        </div>
+
+        <div id="order-status-panel"></div>
+      </div>
+    </div>
+
+    <script src="/order-status.js"></script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastifico | Histórico de Pedidos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .history-shell {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px 60px;
+      }
+
+      .history-card {
+        background: rgba(255,255,255,0.8);
+        border-radius: 28px;
+        border: 1px solid rgba(143,45,32,0.08);
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      .history-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 26px;
+      }
+
+      .history-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .history-order {
+        background: #fffaf6;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .history-order-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        background: #f3e7dd;
+        color: var(--primary-dark);
+        padding: 8px 12px;
+        font-weight: 700;
+        font-size: 0.78rem;
+      }
+
+      .history-order h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: var(--primary-dark);
+      }
+
+      .history-meta {
+        display: grid;
+        gap: 8px;
+        color: var(--muted);
+        margin: 12px 0 14px;
+      }
+
+      .history-items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 8px;
+      }
+
+      .history-items li {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        color: var(--text);
+      }
+
+      .history-items li small {
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .history-total {
+        margin-top: 16px;
+        padding-top: 12px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        font-weight: 800;
+      }
+
+      .empty-history {
+        padding: 22px;
+        border-radius: 16px;
+        border: 1px dashed var(--line);
+        background: rgba(255,255,255,0.7);
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="history-shell">
+      <div class="history-card">
+        <div class="history-header">
+          <div>
+            <p class="eyebrow">Pastifico</p>
+            <h1 style="margin:0; color:var(--primary-dark);">Histórico de pedidos</h1>
+          </div>
+          <a class="topbar-badge" href="/" style="text-decoration:none;">Novo pedido</a>
+        </div>
+
+        <div id="history-panel" class="history-grid"></div>
+      </div>
+    </div>
+
+    <script src="/order-history.js"></script>
+  </body>
+</html>

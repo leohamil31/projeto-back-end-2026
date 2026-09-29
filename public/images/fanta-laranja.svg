@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <rect width="700" height="700" fill="#f4f0e8"/>
+  <path d="M240 120h220l-18 470H258z" fill="#ec6b27"/>
+  <path d="M240 210h220v86H240z" fill="#fffdf8"/>
+  <text x="350" y="264" text-anchor="middle" fill="#ec6b27" font-family="Arial,sans-serif" font-size="52" font-weight="bold">Fanta</text>
+  <text x="350" y="355" text-anchor="middle" fill="#fffdf8" font-family="Arial,sans-serif" font-size="27">LARANJA</text>
+  <circle cx="350" cy="440" r="42" fill="#fffdf8" opacity=".9"/>
+  <text x="350" y="450" text-anchor="middle" fill="#ec6b27" font-family="Arial,sans-serif" font-size="24">600 ml</text>
+</svg>

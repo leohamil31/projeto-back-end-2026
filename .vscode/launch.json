@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pastifico API",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm.cmd run dev",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Open Pastifico in browser",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Open Pastifico kitchen",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000/kitchen-dashboard",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Pastifico cliente e cozinha",
+      "configurations": [
+        "Pastifico API",
+        "Open Pastifico in browser",
+        "Open Pastifico kitchen"
+      ],
+      "stopAll": true
+    }
+  ]
+}

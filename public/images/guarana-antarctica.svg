@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <rect width="700" height="700" fill="#f4f0e8"/>
+  <path d="M240 120h220l-18 470H258z" fill="#d9a52c"/>
+  <path d="M240 210h220v86H240z" fill="#17633c"/>
+  <text x="350" y="263" text-anchor="middle" fill="#fffdf8" font-family="Georgia,serif" font-size="36" font-weight="bold">Guaraná</text>
+  <text x="350" y="350" text-anchor="middle" fill="#17633c" font-family="Arial,sans-serif" font-size="28">ANTARCTICA</text>
+  <circle cx="350" cy="440" r="42" fill="#17633c" opacity=".9"/>
+  <text x="350" y="450" text-anchor="middle" fill="#fffdf8" font-family="Arial,sans-serif" font-size="24">600 ml</text>
+</svg>

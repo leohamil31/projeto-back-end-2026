@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastifico | Autoatendimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">PF</div>
+          <div>
+            <p class="eyebrow">Cucina italiana contemporânea</p>
+            <h1>Pastifico</h1>
+          </div>
+        </div>
+        <nav class="header-nav" aria-label="Navegação do restaurante">
+          <a href="#menu">Cardápio</a>
+          <a href="#order-form">Seu pedido</a>
+          <span class="topbar-badge"><span>●</span> Aberto agora</span>
+        </nav>
+      </header>
+
+      <div class="feature-bar" aria-label="Destaques do restaurante">
+        <span>● Feito na hora</span>
+        <span>● Ingredientes frescos</span>
+        <span>● Retire no balcão quando estiver pronto</span>
+      </div>
+
+      <main class="layout">
+        <section id="menu" class="menu-panel">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">La tavola del Pastifico</p>
+              <h2>Escolha seu momento</h2>
+              <p class="section-lede">Massas artesanais, entradas para compartilhar e rótulos escolhidos para acompanhar.</p>
+            </div>
+            <span class="section-hint">Toque em um prato para personalizar</span>
+          </div>
+
+          <div id="categories" class="category-list"></div>
+          <div id="products" class="product-grid"></div>
+        </section>
+
+        <aside class="cart-panel">
+          <div class="section-heading">
+            <h2>Seu pedido</h2>
+          </div>
+
+          <div id="cart-items" class="cart-items"></div>
+
+          <div class="totals">
+            <div>
+              <span>Subtotal</span>
+              <strong id="subtotal">R$ 0,00</strong>
+            </div>
+            <div>
+              <span>Total</span>
+              <strong id="total">R$ 0,00</strong>
+            </div>
+          </div>
+
+          <form id="order-form" class="order-form">
+            <label>
+              Nome
+              <input id="customerName" name="customerName" type="text" placeholder="Seu nome" required />
+            </label>
+
+            <label>
+              Mesa
+              <input id="tableNumber" name="tableNumber" type="number" min="1" placeholder="Ex: 5" required />
+            </label>
+
+            <div class="payment-box">
+              <span>Pagamento</span>
+              <div class="payment-options">
+                <label class="payment-option active">
+                  <input type="radio" name="paymentMethod" value="Cartão" checked />
+                  <span>Cartão</span>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="paymentMethod" value="PIX" />
+                  <span>PIX</span>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="paymentMethod" value="Dinheiro" />
+                  <span>Dinheiro</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="primary-button">Finalizar pedido</button>
+          </form>
+        </aside>
+      </main>
+    </div>
+
+    <div id="checkout-modal" class="checkout-modal hidden" aria-hidden="true">
+      <div class="checkout-card" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+        <button id="close-checkout" class="close-checkout" type="button" aria-label="Fechar">×</button>
+        <p class="eyebrow">Confirmação</p>
+        <h3 id="checkout-title">Resumo do pedido</h3>
+
+        <div id="checkout-summary" class="checkout-summary"></div>
+
+        <div class="checkout-actions">
+          <button id="cancel-checkout" class="secondary-button" type="button">Voltar</button>
+          <button id="confirm-checkout" class="primary-button" type="button">Confirmar pedido</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="customize-modal" class="checkout-modal hidden" aria-hidden="true">
+      <div class="customize-card" role="dialog" aria-modal="true" aria-labelledby="customize-title">
+        <button id="close-customize" class="close-checkout" type="button" aria-label="Fechar">×</button>
+        <div class="customize-hero">
+          <img id="customize-image" src="" alt="" />
+        </div>
+        <div class="customize-content">
+          <p class="eyebrow">Monte do seu jeito</p>
+          <div class="customize-heading">
+            <div>
+              <h3 id="customize-title">Personalizar prato</h3>
+              <p id="customize-description"></p>
+            </div>
+            <strong id="customize-price"></strong>
+          </div>
+          <div id="customize-options" class="customize-options"></div>
+          <div class="customize-footer">
+            <div class="quantity-control">
+              <button id="customize-decrease" type="button" aria-label="Diminuir quantidade">−</button>
+              <strong id="customize-quantity">1</strong>
+              <button id="customize-increase" type="button" aria-label="Aumentar quantidade">+</button>
+            </div>
+            <button id="add-customized" class="primary-button" type="button">Adicionar ao pedido</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

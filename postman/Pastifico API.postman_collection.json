@@ -1,0 +1,117 @@
+{
+  "info": {
+    "_postman_id": "c2c1e6fd-7c62-4be9-84d3-f4bdff664180",
+    "name": "Pastifico API",
+    "description": "Requisições para o autoatendimento, catálogo, cozinha e acompanhamento de pedidos do Pastifico.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "productId", "value": "spaghetti-carbonara" },
+    { "key": "orderId", "value": "" },
+    { "key": "tableNumber", "value": "5" }
+  ],
+  "item": [
+    {
+      "name": "Sistema",
+      "item": [
+        {
+          "name": "Health check",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/api/health" }
+        }
+      ]
+    },
+    {
+      "name": "Categorias",
+      "item": [
+        {
+          "name": "Listar categorias",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categories" }
+        },
+        {
+          "name": "Criar categoria",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Especiais da casa\",\n  \"description\": \"Pratos especiais do Pastifico\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": "{{baseUrl}}/categories"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Listar produtos",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/products" }
+        },
+        {
+          "name": "Buscar produto por ID",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/products/{{productId}}" }
+        },
+        {
+          "name": "Criar produto",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Ravioli de teste\",\n  \"description\": \"Ravioli artesanal para testar a API\",\n  \"price\": 39.90,\n  \"image\": \"https://example.com/ravioli.jpg\",\n  \"isAvailable\": true,\n  \"categoryId\": \"massas\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": "{{baseUrl}}/products",
+            "description": "A resposta inclui o ID; salve-o na variável productId para testar GET ou PUT."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 201) {", "  const product = pm.response.json();", "  if (product.id) {", "    pm.collectionVariables.set('productId', product.id);", "    pm.environment.set('productId', product.id);", "  }", "}"] } }]
+        },
+        {
+          "name": "Atualizar produto",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"price\": 42.50,\n  \"isAvailable\": true\n}", "options": { "raw": { "language": "json" } } },
+            "url": "{{baseUrl}}/products/{{productId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
+        {
+          "name": "Listar pedidos",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/orders" }
+        },
+        {
+          "name": "Criar pedido de exemplo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"customerName\": \"Cliente Postman\",\n  \"tableNumber\": 5,\n  \"items\": [\n    {\n      \"productId\": \"spaghetti-carbonara\",\n      \"name\": \"Spaghetti Carbonara\",\n      \"quantity\": 1,\n      \"unitPrice\": 42.90,\n      \"options\": [\"Parmesão ralado na hora\"]\n    }\n  ]\n}", "options": { "raw": { "language": "json" } } },
+            "url": "{{baseUrl}}/orders"
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 201) {", "  const order = pm.response.json();", "  if (order.id) {", "    pm.collectionVariables.set('orderId', order.id);", "    pm.environment.set('orderId', order.id);", "  }", "}"] } }]
+        },
+        {
+          "name": "Atualizar status do pedido",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"status\": \"Preparando\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": "{{baseUrl}}/orders/{{orderId}}/status"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cozinha",
+      "item": [
+        {
+          "name": "Listar pedidos em aberto",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/orders/kitchen" }
+        },
+        {
+          "name": "Listar pedidos da mesa",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/orders/table/{{tableNumber}}" }
+        }
+      ]
+    }
+  ]
+}

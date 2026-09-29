@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.env
+*.db
+Pastifico-para-compartilhar.zip

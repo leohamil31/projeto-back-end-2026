@@ -1,0 +1,608 @@
+{
+  "categories": [
+    {
+      "id": "massas",
+      "name": "Massas",
+      "description": "Especialidades artesanais do Pastifico",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "entradas",
+      "name": "Entradas",
+      "description": "Antipasti para abrir a experiência italiana",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "bebidas",
+      "name": "Bebidas",
+      "description": "Vinhos, sucos e refrescos para acompanhar",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "sobremesas",
+      "name": "Sobremesas",
+      "description": "Doçura final com sabores italianos clássicos",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "spaghetti-carbonara",
+      "name": "Spaghetti Carbonara",
+      "description": "Massa cremosa com ovos, parmesão, bacon e pimenta negra.",
+      "price": 42.9,
+      "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "massas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "lasanha-bolognesa",
+      "name": "Lasanha à Bolonhesa",
+      "description": "Camadas de massa com molho bolonhesa e queijo gratinado.",
+      "price": 48.5,
+      "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=900&q=85",
+      "isAvailable": true,
+      "categoryId": "massas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "penne-al-pomodoro",
+      "name": "Penne al Pomodoro",
+      "description": "Penne ao molho de tomate fresco com manjericão.",
+      "price": 36.5,
+      "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "massas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "ravioli-ricota",
+      "name": "Ravioli de Ricota",
+      "description": "Ravioli artesanal recheado com ricota e molho de manteiga e ervas.",
+      "price": 46.9,
+      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "massas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "gnocchi-quatro-queijos",
+      "name": "Gnocchi Quatro Queijos",
+      "description": "Gnocchi macio coberto com molho cremoso de quatro queijos.",
+      "price": 44.8,
+      "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "massas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "fettuccine-alfredo",
+      "name": "Fettuccine Alfredo",
+      "description": "Fettuccine em molho cremoso de parmesão e manteiga.",
+      "price": 43.5,
+      "image": "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "massas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "bruschetta-classica",
+      "name": "Bruschetta Clássica",
+      "description": "Pão tostado com tomate, alho, manjericão e azeite.",
+      "price": 18.9,
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "entradas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "caprese",
+      "name": "Caprese",
+      "description": "Tomate, mussarela de búfala, manjericão e balsâmico.",
+      "price": 22.5,
+      "image": "https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=900&q=85",
+      "isAvailable": true,
+      "categoryId": "entradas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "arancini",
+      "name": "Arancini",
+      "description": "Bolinho de risoto crocante com queijo e ervas.",
+      "price": 20.9,
+      "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "entradas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "crostini-prosciutto",
+      "name": "Crostini de Prosciutto",
+      "description": "Pão tostado com prosciutto crocante e cream cheese.",
+      "price": 24.5,
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "entradas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "caponata",
+      "name": "Caponata",
+      "description": "Entradinha de berinjela, tomate, azeitona e alho.",
+      "price": 19.8,
+      "image": "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "entradas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vinho-toscano",
+      "name": "Vinho Toscano",
+      "description": "Seleção premium de vinho tinto com notas de frutos vermelhos.",
+      "price": 29.9,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/DFC_2432_A_single_green_wine_bottle_with_a_tree-themed_label_resting_on_concrete_ledge_beside_bamboo_blinds_and_trailing_plants.jpg",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "chianti-classico",
+      "name": "Chianti Classico",
+      "description": "Tinto italiano elegante, com notas de cereja, ervas e final aveludado.",
+      "price": 64.9,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Wine_Bottle_MET_62455.jpg",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "pinot-grigio",
+      "name": "Pinot Grigio delle Venezie",
+      "description": "Branco fresco e delicado, perfeito para entradas e massas leves.",
+      "price": 59.9,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Niepoort_1986_Colheita_Single_Vintage_Tawny_Port_Wine_%2815000030612%29.jpg",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "prosecco-veneto",
+      "name": "Prosecco Veneto",
+      "description": "Espumante italiano leve e aromático para brindar à mesa.",
+      "price": 72.9,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/DFC_2432_A_single_green_wine_bottle_with_a_tree-themed_label_resting_on_concrete_ledge_beside_bamboo_blinds_and_trailing_plants.jpg",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "montepulciano-dabruzzo",
+      "name": "Montepulciano d’Abruzzo",
+      "description": "Tinto encorpado e gastronômico, com frutas maduras e especiarias.",
+      "price": 68.9,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Niepoort_2000_Colheita_Port_%28Single_Vintage_Tawny_Port%29_%2820871220678%29.jpg",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "limonada-italiana",
+      "name": "Limonada Italiana",
+      "description": "Refrescante limonada com hortelã e sabor cítrico intenso.",
+      "price": 12.5,
+      "image": "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "agua-com-gas",
+      "name": "Água com Gás",
+      "description": "Garrafa gelada para acompanhar a refeição.",
+      "price": 8.5,
+      "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "coca-cola",
+      "name": "Coca-Cola 600ml",
+      "description": "Refrigerante de cola geladinho para acompanhar.",
+      "price": 9.5,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coca-cola_50cl_can_-_Italia.jpg",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "guarana-antarctica",
+      "name": "Guaraná Antarctica 600ml",
+      "description": "Bebida energética e refrescante com sabor marcante.",
+      "price": 9.5,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lata_de_Guaran%C3%A1_Antarctica.jpg",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "fanta-laranja",
+      "name": "Fanta Laranja 600ml",
+      "description": "Refrigerante cítrico com sabor refrescante e vibrant.",
+      "price": 9.5,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Fanta-Orange-Can-330ml_84177_%28711695088329%29.jpg",
+      "isAvailable": true,
+      "categoryId": "bebidas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "tiramisu",
+      "name": "Tiramisu",
+      "description": "Clássico italiano com café, mascarpone e cacau.",
+      "price": 21.9,
+      "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "sobremesas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "panna-cotta",
+      "name": "Panna Cotta",
+      "description": "Sobremesa cremosa com calda de frutas vermelhas.",
+      "price": 19.5,
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "sobremesas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "cannoli",
+      "name": "Cannoli",
+      "description": "Casca crocante recheada com ricota e chocolate.",
+      "price": 18.5,
+      "image": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "sobremesas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "pave-de-chocolate",
+      "name": "Pavê de Chocolate",
+      "description": "Camadas cremosa de chocolate com biscoitos e cacau.",
+      "price": 23.5,
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "sobremesas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "torta-de-ricota",
+      "name": "Torta de Ricota",
+      "description": "Sobremesa clássica com massa fina e recheio de ricota.",
+      "price": 24.9,
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "sobremesas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "affogato",
+      "name": "Affogato",
+      "description": "Sorvete de baunilha com café espresso quentinho.",
+      "price": 18.9,
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
+      "isAvailable": true,
+      "categoryId": "sobremesas",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order-1789770508144",
+      "customerName": "5g5g",
+      "tableNumber": 4,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789770508144",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 4,
+          "unitPrice": 48.5,
+          "subtotal": 194
+        }
+      ],
+      "total": 194,
+      "createdAt": "2026-09-18T22:28:28.144Z"
+    },
+    {
+      "id": "order-1789777726673",
+      "customerName": "eggeg",
+      "tableNumber": 3,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "agua-com-gas-0-1789777726673",
+          "productId": "agua-com-gas",
+          "name": "Água com Gás",
+          "quantity": 1,
+          "unitPrice": 8.5,
+          "subtotal": 8.5
+        }
+      ],
+      "total": 8.5,
+      "createdAt": "2026-09-19T00:28:46.673Z"
+    },
+    {
+      "id": "order-1789778120236",
+      "customerName": "leozera",
+      "tableNumber": 67,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789778120236",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 1,
+          "unitPrice": 48.5,
+          "subtotal": 48.5
+        }
+      ],
+      "total": 48.5,
+      "createdAt": "2026-09-19T00:35:20.236Z"
+    },
+    {
+      "id": "order-1789778304736",
+      "customerName": "Maria",
+      "tableNumber": 5,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "spaghetti-carbonara-0-1789778304736",
+          "productId": "spaghetti-carbonara",
+          "name": "Spaghetti Carbonara",
+          "quantity": 2,
+          "unitPrice": 42.9,
+          "subtotal": 85.8
+        }
+      ],
+      "total": 85.8,
+      "createdAt": "2026-09-19T00:38:24.736Z"
+    },
+    {
+      "id": "order-1789778304746",
+      "customerName": "João",
+      "tableNumber": 8,
+      "status": "Preparando",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789778304746",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 1,
+          "unitPrice": 48.5,
+          "subtotal": 48.5
+        }
+      ],
+      "total": 48.5,
+      "createdAt": "2026-09-19T00:38:24.746Z"
+    },
+    {
+      "id": "order-1789778448842",
+      "customerName": "Maria",
+      "tableNumber": 5,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "spaghetti-carbonara-0-1789778448842",
+          "productId": "spaghetti-carbonara",
+          "name": "Spaghetti Carbonara",
+          "quantity": 2,
+          "unitPrice": 42.9,
+          "subtotal": 85.8
+        }
+      ],
+      "total": 85.8,
+      "createdAt": "2026-09-19T00:40:48.842Z"
+    },
+    {
+      "id": "order-1789778448866",
+      "customerName": "João",
+      "tableNumber": 8,
+      "status": "Preparando",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789778448866",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 1,
+          "unitPrice": 48.5,
+          "subtotal": 48.5
+        }
+      ],
+      "total": 48.5,
+      "createdAt": "2026-09-19T00:40:48.866Z"
+    },
+    {
+      "id": "order-1789778704731",
+      "customerName": "Maria",
+      "tableNumber": 5,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "spaghetti-carbonara-0-1789778704731",
+          "productId": "spaghetti-carbonara",
+          "name": "Spaghetti Carbonara",
+          "quantity": 2,
+          "unitPrice": 42.9,
+          "subtotal": 85.8
+        }
+      ],
+      "total": 85.8,
+      "createdAt": "2026-09-19T00:45:04.731Z"
+    },
+    {
+      "id": "order-1789778704741",
+      "customerName": "João",
+      "tableNumber": 8,
+      "status": "Preparando",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789778704741",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 1,
+          "unitPrice": 48.5,
+          "subtotal": 48.5
+        }
+      ],
+      "total": 48.5,
+      "createdAt": "2026-09-19T00:45:04.741Z"
+    },
+    {
+      "id": "order-1789778721793",
+      "customerName": "Maria",
+      "tableNumber": 5,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "spaghetti-carbonara-0-1789778721793",
+          "productId": "spaghetti-carbonara",
+          "name": "Spaghetti Carbonara",
+          "quantity": 2,
+          "unitPrice": 42.9,
+          "subtotal": 85.8
+        }
+      ],
+      "total": 85.8,
+      "createdAt": "2026-09-19T00:45:21.793Z"
+    },
+    {
+      "id": "order-1789778721806",
+      "customerName": "João",
+      "tableNumber": 8,
+      "status": "Preparando",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789778721806",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 1,
+          "unitPrice": 48.5,
+          "subtotal": 48.5
+        }
+      ],
+      "total": 48.5,
+      "createdAt": "2026-09-19T00:45:21.806Z"
+    },
+    {
+      "id": "order-1789779633867",
+      "customerName": "Maria",
+      "tableNumber": 5,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "spaghetti-carbonara-0-1789779633867",
+          "productId": "spaghetti-carbonara",
+          "name": "Spaghetti Carbonara",
+          "quantity": 2,
+          "unitPrice": 42.9,
+          "subtotal": 85.8
+        }
+      ],
+      "total": 85.8,
+      "createdAt": "2026-09-19T01:00:33.867Z"
+    },
+    {
+      "id": "order-1789779633879",
+      "customerName": "João",
+      "tableNumber": 8,
+      "status": "Preparando",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789779633879",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 1,
+          "unitPrice": 48.5,
+          "subtotal": 48.5
+        }
+      ],
+      "total": 48.5,
+      "createdAt": "2026-09-19T01:00:33.879Z"
+    },
+    {
+      "id": "order-1789779718795",
+      "customerName": "Maria",
+      "tableNumber": 5,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "spaghetti-carbonara-0-1789779718795",
+          "productId": "spaghetti-carbonara",
+          "name": "Spaghetti Carbonara",
+          "quantity": 2,
+          "unitPrice": 42.9,
+          "subtotal": 85.8
+        }
+      ],
+      "total": 85.8,
+      "createdAt": "2026-09-19T01:01:58.795Z"
+    },
+    {
+      "id": "order-1789779718810",
+      "customerName": "João",
+      "tableNumber": 8,
+      "status": "Preparando",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789779718810",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 1,
+          "unitPrice": 48.5,
+          "subtotal": 48.5
+        }
+      ],
+      "total": 48.5,
+      "createdAt": "2026-09-19T01:01:58.810Z"
+    },
+    {
+      "id": "order-1789780330322",
+      "customerName": "Maria",
+      "tableNumber": 5,
+      "status": "Recebido",
+      "items": [
+        {
+          "id": "spaghetti-carbonara-0-1789780330322",
+          "productId": "spaghetti-carbonara",
+          "name": "Spaghetti Carbonara",
+          "quantity": 2,
+          "unitPrice": 42.9,
+          "subtotal": 85.8
+        }
+      ],
+      "total": 85.8,
+      "createdAt": "2026-09-19T01:12:10.322Z"
+    },
+    {
+      "id": "order-1789780330345",
+      "customerName": "João",
+      "tableNumber": 8,
+      "status": "Preparando",
+      "items": [
+        {
+          "id": "lasanha-bolognesa-0-1789780330345",
+          "productId": "lasanha-bolognesa",
+          "name": "Lasanha à Bolonhesa",
+          "quantity": 1,
+          "unitPrice": 48.5,
+          "subtotal": 48.5
+        }
+      ],
+      "total": 48.5,
+      "createdAt": "2026-09-19T01:12:10.345Z"
+    }
+  ]
+}

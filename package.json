@@ -1,0 +1,37 @@
+{
+  "name": "pastifico-api",
+  "version": "1.0.0",
+  "description": "Pastifico - sistema de autoatendimento para restaurante de massas italianas em Node.js + TypeScript",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "tsx --test",
+    "migrate:supabase": "tsx scripts/migrate-json-to-supabase.ts"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "typescript",
+    "restaurant",
+    "api",
+    "italian-food",
+    "pastifico"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
+    "dotenv": "^18.0.2",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.2.2",
+    "tsx": "^4.23.13",
+    "typescript": "^5.8.3"
+  }
+}
