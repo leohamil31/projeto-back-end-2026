@@ -41,7 +41,7 @@
       "name": "Lasanha à Bolonhesa",
       "description": "Camadas de massa com molho bolonhesa e queijo gratinado.",
       "price": 48.5,
-      "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=900&q=85",
+      "image": "/images/lasanha-bolognesa-real.jpg",
       "isAvailable": true,
       "categoryId": "92cafd40-af69-41a5-840f-c052f88c88b7",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -101,7 +101,7 @@
       "name": "Caprese",
       "description": "Tomate, mussarela de búfala, manjericão e balsâmico.",
       "price": 22.5,
-      "image": "https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=900&q=85",
+      "image": "/images/caprese-real.jpg",
       "isAvailable": true,
       "categoryId": "fb0b737b-a03c-41e2-a400-d79074ef3aa8",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -141,7 +141,7 @@
       "name": "Vinho Toscano",
       "description": "Seleção premium de vinho tinto com notas de frutos vermelhos.",
       "price": 29.9,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/DFC_2432_A_single_green_wine_bottle_with_a_tree-themed_label_resting_on_concrete_ledge_beside_bamboo_blinds_and_trailing_plants.jpg",
+      "image": "/images/vinho-toscano-real.jpg",
       "isAvailable": true,
       "categoryId": "4dee166a-59c6-4d9d-8148-7d7ab40951a5",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -151,7 +151,7 @@
       "name": "Chianti Classico",
       "description": "Tinto italiano elegante, com notas de cereja, ervas e final aveludado.",
       "price": 64.9,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Wine_Bottle_MET_62455.jpg",
+      "image": "/images/chianti-classico-real.jpg",
       "isAvailable": true,
       "categoryId": "4dee166a-59c6-4d9d-8148-7d7ab40951a5",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -161,7 +161,7 @@
       "name": "Pinot Grigio delle Venezie",
       "description": "Branco fresco e delicado, perfeito para entradas e massas leves.",
       "price": 59.9,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Niepoort_1986_Colheita_Single_Vintage_Tawny_Port_Wine_%2815000030612%29.jpg",
+      "image": "/images/pinot-grigio-real.jpg",
       "isAvailable": true,
       "categoryId": "4dee166a-59c6-4d9d-8148-7d7ab40951a5",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -171,7 +171,7 @@
       "name": "Prosecco Veneto",
       "description": "Espumante italiano leve e aromático para brindar à mesa.",
       "price": 72.9,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/DFC_2432_A_single_green_wine_bottle_with_a_tree-themed_label_resting_on_concrete_ledge_beside_bamboo_blinds_and_trailing_plants.jpg",
+      "image": "/images/prosecco-veneto-real.jpg",
       "isAvailable": true,
       "categoryId": "4dee166a-59c6-4d9d-8148-7d7ab40951a5",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -181,7 +181,7 @@
       "name": "Montepulciano d’Abruzzo",
       "description": "Tinto encorpado e gastronômico, com frutas maduras e especiarias.",
       "price": 68.9,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Niepoort_2000_Colheita_Port_%28Single_Vintage_Tawny_Port%29_%2820871220678%29.jpg",
+      "image": "/images/montepulciano-dabruzzo-real.jpg",
       "isAvailable": true,
       "categoryId": "4dee166a-59c6-4d9d-8148-7d7ab40951a5",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -211,7 +211,7 @@
       "name": "Coca-Cola 600ml",
       "description": "Refrigerante de cola geladinho para acompanhar.",
       "price": 9.5,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coca-cola_50cl_can_-_Italia.jpg",
+      "image": "/images/coca-cola-real.jpg",
       "isAvailable": true,
       "categoryId": "4dee166a-59c6-4d9d-8148-7d7ab40951a5",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -221,7 +221,7 @@
       "name": "Guaraná Antarctica 600ml",
       "description": "Bebida energética e refrescante com sabor marcante.",
       "price": 9.5,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lata_de_Guaran%C3%A1_Antarctica.jpg",
+      "image": "/images/guarana-antarctica-real.jpg",
       "isAvailable": true,
       "categoryId": "4dee166a-59c6-4d9d-8148-7d7ab40951a5",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -231,7 +231,7 @@
       "name": "Fanta Laranja 600ml",
       "description": "Refrigerante cítrico com sabor refrescante e vibrant.",
       "price": 9.5,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Fanta-Orange-Can-330ml_84177_%28711695088329%29.jpg",
+      "image": "/images/fanta-laranja-real.jpg",
       "isAvailable": true,
       "categoryId": "4dee166a-59c6-4d9d-8148-7d7ab40951a5",
       "createdAt": "2026-01-01T00:00:00.000Z"
@@ -271,7 +271,7 @@
       "name": "Pavê de Chocolate",
       "description": "Camadas cremosa de chocolate com biscoitos e cacau.",
       "price": 23.5,
-      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80",
+      "image": "/images/pave-chocolate-real.png",
       "isAvailable": true,
       "categoryId": "5502efc9-d2bf-44a8-b8a1-fafc81dbbea6",
       "createdAt": "2026-01-01T00:00:00.000Z"

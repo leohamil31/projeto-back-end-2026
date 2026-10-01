@@ -42,6 +42,12 @@ const foodCustomizationOptions = [
   { id: 'pimenta', name: 'Pimenta calabresa', price: 2 }
 ];
 
+const dessertCustomizationOptions = [
+  { id: 'calda-chocolate', name: 'Calda de chocolate extra', price: 3 },
+  { id: 'chantilly', name: 'Chantilly', price: 3 },
+  { id: 'amendoas', name: 'Raspas de amêndoas', price: 4 }
+];
+
 const WINE_PRODUCT_NAMES = ['Vinho Toscano', 'Chianti Classico', 'Pinot Grigio delle Venezie', 'Prosecco Veneto', 'Montepulciano d’Abruzzo'];
 const SODA_PRODUCT_NAMES = ['Coca-Cola 600ml', 'Guaraná Antarctica 600ml', 'Fanta Laranja 600ml'];
 
@@ -65,6 +71,7 @@ const getCustomizationOptions = (product) => {
 
   const category = state.categories.find((item) => item.id === product.categoryId);
   if (category?.name === 'Bebidas') return [];
+  if (category?.name === 'Sobremesas') return dessertCustomizationOptions;
   return foodCustomizationOptions;
 };
 

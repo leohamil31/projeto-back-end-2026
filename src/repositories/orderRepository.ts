@@ -3,6 +3,7 @@ import { Order, OrderItem, OrderStatus, PaymentMethod, PaymentStatus } from '../
 import { isSupabaseConfigured, requireSupabaseClient } from '../config/supabaseClient';
 import { ensureDatabaseFile, saveDatabase } from '../config/localDatabase';
 import { productRepository } from './productRepository';
+import { isValidUuid } from '../utils/uuid';
 
 const foodOptionPrices: Record<string, number> = {
   'Molho extra da casa': 4,
@@ -12,8 +13,15 @@ const foodOptionPrices: Record<string, number> = {
   'Pimenta calabresa': 2
 };
 
+const dessertOptionPrices: Record<string, number> = {
+  'Calda de chocolate extra': 3,
+  'Chantilly': 3,
+  'Raspas de amêndoas': 4
+};
+
 const wineProductNames = new Set(['Vinho Toscano', 'Chianti Classico', 'Pinot Grigio delle Venezie', 'Prosecco Veneto', 'Montepulciano d’Abruzzo']);
 const sodaProductNames = new Set(['Coca-Cola 600ml', 'Guaraná Antarctica 600ml', 'Fanta Laranja 600ml']);
+const dessertProductNames = new Set(['Tiramisu', 'Panna Cotta', 'Cannoli', 'Pavê de Chocolate', 'Torta de Ricota', 'Affogato']);
 
 const getAuthoritativeItemPrice = (productName: string, basePrice: number, options: string[]): number => {
   let price = basePrice;
@@ -29,6 +37,14 @@ const getAuthoritativeItemPrice = (productName: string, basePrice: number, optio
     if (options.some((option) => !allowed.includes(option))) throw new Error('Adicional inválido para refrigerante.');
     if (options.includes('Lata 350 ml')) price = 7.5;
     return price + (options.includes('Copo com gelo') ? 1.5 : 0) + (options.includes('Com limão') ? 1 : 0) + (options.includes('Com laranja') ? 1 : 0);
+  }
+
+  if (dessertProductNames.has(productName)) {
+    const extras = options.reduce((total, option) => {
+      if (!(option in dessertOptionPrices)) throw new Error('Adicional de sobremesa inválido.');
+      return total + dessertOptionPrices[option];
+    }, 0);
+    return price + extras;
   }
 
   const extras = options.reduce((total, option) => {
@@ -99,6 +115,7 @@ export const orderRepository = {
 
   async findById(id: string): Promise<Order | undefined> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return undefined;
       const { data, error } = await requireSupabaseClient().from('orders').select('*, order_items(*)').eq('id', id).maybeSingle();
       if (error) throw error;
       return data ? mapOrder(data) : undefined;
@@ -169,6 +186,7 @@ export const orderRepository = {
 
   async updateStatus(id: string, status: OrderStatus): Promise<Order | undefined> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return undefined;
       const { data, error } = await requireSupabaseClient().from('orders').update({ status }).eq('id', id).select('*, order_items(*)').maybeSingle();
       if (error) throw error;
       return data ? mapOrder(data) : undefined;
@@ -185,6 +203,7 @@ export const orderRepository = {
 
   async remove(id: string): Promise<boolean> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return false;
       const { error, count } = await requireSupabaseClient().from('orders').delete({ count: 'exact' }).eq('id', id);
       if (error) throw error;
       return Boolean(count);

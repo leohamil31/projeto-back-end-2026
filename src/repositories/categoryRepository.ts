@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { Category } from '../models/Category';
 import { isSupabaseConfigured, requireSupabaseClient } from '../config/supabaseClient';
 import { ensureDatabaseFile, saveDatabase } from '../config/localDatabase';
+import { isValidUuid } from '../utils/uuid';
 
 const mapCategory = (row: any): Category => ({
   id: row.id,
@@ -29,6 +30,7 @@ export const categoryRepository = {
 
   async findById(id: string): Promise<Category | undefined> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return undefined;
       const { data, error } = await requireSupabaseClient().from('categories').select('*').eq('id', id).maybeSingle();
       if (error) throw error;
       return data ? mapCategory(data) : undefined;
@@ -68,6 +70,7 @@ export const categoryRepository = {
 
   async update(id: string, changes: Partial<Omit<Category, 'id' | 'createdAt'>>): Promise<Category | undefined> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return undefined;
       const { data, error } = await requireSupabaseClient().from('categories').update(changes).eq('id', id).select().maybeSingle();
       if (error) throw error;
       return data ? mapCategory(data) : undefined;
@@ -84,6 +87,7 @@ export const categoryRepository = {
 
   async remove(id: string): Promise<boolean> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return false;
       const { error, count } = await requireSupabaseClient().from('categories').delete({ count: 'exact' }).eq('id', id);
       if (error) throw error;
       return Boolean(count);

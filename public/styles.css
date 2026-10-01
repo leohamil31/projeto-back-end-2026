@@ -269,13 +269,6 @@ h1 {
   object-fit: cover;
 }
 
-.product-image img[src*="coca-cola"],
-.product-image img[src*="guarana-antarctica"],
-.product-image img[src*="fanta-laranja"] {
-  object-fit: contain;
-  padding: 14px 34px;
-}
-
 .product-image.image-missing::after {
   content: attr(data-label);
   display: grid;
@@ -618,13 +611,6 @@ h1 {
   height: 100%;
   min-height: 300px;
   object-fit: cover;
-}
-
-.customize-hero img[src*="coca-cola"],
-.customize-hero img[src*="guarana-antarctica"],
-.customize-hero img[src*="fanta-laranja"] {
-  object-fit: contain;
-  padding: 26px;
 }
 
 .customize-hero img.image-broken {
@@ -1626,13 +1612,6 @@ body {
   background: linear-gradient(145deg, #d9e6d4, #f4efe3);
 }
 
-.product-image img[src*="coca-cola"],
-.product-image img[src*="guarana-antarctica"],
-.product-image img[src*="fanta-laranja"] {
-  object-fit: contain;
-  padding: 14px 34px;
-}
-
 .category-button,
 .add-button,
 .primary-button,
@@ -1685,13 +1664,6 @@ body {
 
 .customize-hero {
   background: linear-gradient(145deg, #d9e6d4, #f4efe3);
-}
-
-.customize-hero img[src*="coca-cola"],
-.customize-hero img[src*="guarana-antarctica"],
-.customize-hero img[src*="fanta-laranja"] {
-  object-fit: contain;
-  padding: 26px;
 }
 
 .topbar-badge {

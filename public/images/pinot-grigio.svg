@@ -1,4 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
-<defs><linearGradient id="glass" x1="0" x2="1"><stop stop-color="#7b9d70"/><stop offset=".45" stop-color="#c8dfb0"/><stop offset="1" stop-color="#46664e"/></linearGradient></defs>
-<rect width="700" height="700" fill="#dbe8da"/><ellipse cx="350" cy="600" rx="150" ry="22" fill="#879e8a" opacity=".35"/><path d="M310 105h80v120l38 65v280H272V290l38-65z" fill="url(#glass)"/><path d="M310 105h80v28h-80z" fill="#f7f2dc"/><rect x="272" y="326" width="156" height="135" rx="3" fill="#f7f2dc"/><text x="350" y="368" text-anchor="middle" fill="#4d6d52" font-family="Georgia,serif" font-size="27" font-weight="bold">PINOT</text><text x="350" y="403" text-anchor="middle" fill="#4d6d52" font-family="Georgia,serif" font-size="23">GRIGIO</text><text x="350" y="432" text-anchor="middle" fill="#7b6d4d" font-family="Arial,sans-serif" font-size="14">DELLE VENEZIE</text>
-</svg>

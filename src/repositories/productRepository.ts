@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { Product } from '../models/Product';
 import { isSupabaseConfigured, requireSupabaseClient } from '../config/supabaseClient';
 import { ensureDatabaseFile, saveDatabase } from '../config/localDatabase';
+import { isValidUuid } from '../utils/uuid';
 
 const mapProduct = (row: any): Product => ({
   id: row.id,
@@ -33,6 +34,7 @@ export const productRepository = {
 
   async findById(id: string): Promise<Product | undefined> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return undefined;
       const { data, error } = await requireSupabaseClient().from('products').select('*').eq('id', id).maybeSingle();
       if (error) throw error;
       return data ? mapProduct(data) : undefined;
@@ -91,6 +93,7 @@ export const productRepository = {
 
   async update(id: string, changes: Partial<Omit<Product, 'id' | 'createdAt'>>): Promise<Product | undefined> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return undefined;
       const payload: Record<string, unknown> = { ...changes };
       if ('isAvailable' in changes) {
         payload.is_available = changes.isAvailable;
@@ -116,6 +119,7 @@ export const productRepository = {
 
   async remove(id: string): Promise<boolean> {
     if (isSupabaseConfigured()) {
+      if (!isValidUuid(id)) return false;
       const { error, count } = await requireSupabaseClient().from('products').delete({ count: 'exact' }).eq('id', id);
       if (error) throw error;
       return Boolean(count);

@@ -10,28 +10,18 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Open Pastifico in browser",
-      "type": "chrome",
+      "name": "Abrir telas do Pastifico no navegador",
+      "type": "node",
       "request": "launch",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "Open Pastifico kitchen",
-      "type": "chrome",
-      "request": "launch",
-      "url": "http://localhost:3000/kitchen-dashboard",
-      "webRoot": "${workspaceFolder}"
+      "program": "${workspaceFolder}/scripts/open-browser-tabs.mjs",
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen"
     }
   ],
   "compounds": [
     {
-      "name": "Pastifico cliente e cozinha",
-      "configurations": [
-        "Pastifico API",
-        "Open Pastifico in browser",
-        "Open Pastifico kitchen"
-      ],
+      "name": "Pastifico (servidor + 3 abas no navegador)",
+      "configurations": ["Pastifico API", "Abrir telas do Pastifico no navegador"],
       "stopAll": true
     }
   ]
