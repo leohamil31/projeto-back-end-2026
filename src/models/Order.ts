@@ -1,5 +1,3 @@
-import { ensureDatabaseFile, saveDatabase } from './database';
-
 export type OrderStatus = 'Recebido' | 'Preparando' | 'Pronto' | 'Entregue';
 export type PaymentMethod = 'PIX' | 'Cartão' | 'Dinheiro';
 export type PaymentStatus = 'Aguardando no caixa' | 'Pago';
@@ -25,15 +23,3 @@ export interface Order {
   paymentMethod: PaymentMethod;
   paymentStatus: PaymentStatus;
 }
-
-const database = ensureDatabaseFile();
-
-export let orders: Order[] = database.orders;
-
-export const persistOrders = (): void => {
-  saveDatabase({
-    categories: ensureDatabaseFile().categories,
-    products: ensureDatabaseFile().products,
-    orders
-  });
-};

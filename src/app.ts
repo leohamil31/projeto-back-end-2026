@@ -5,7 +5,8 @@ import categoryRoutes from './routes/categoryRoutes';
 import productRoutes from './routes/productRoutes';
 import orderRoutes from './routes/orderRoutes';
 import kitchenRoutes from './routes/kitchenRoutes';
-import { isSupabaseConfigured } from './data/supabase';
+import { isSupabaseConfigured } from './config/supabaseClient';
+import { notFoundHandler, errorHandler } from './middlewares/errorHandler';
 
 const app = express();
 const publicDir = path.join(process.cwd(), 'public');
@@ -21,13 +22,20 @@ app.get('/api/health', (_req, res) => {
     payments: 'cashier-only',
     endpoints: [
       'GET /categories',
+      'GET /categories/:id',
       'POST /categories',
+      'PUT /categories/:id',
+      'DELETE /categories/:id',
       'GET /products',
+      'GET /products/:id',
       'POST /products',
+      'PUT /products/:id',
+      'DELETE /products/:id',
       'GET /orders',
-      'POST /orders',
       'GET /orders/:id',
+      'POST /orders',
       'PATCH /orders/:id/status',
+      'DELETE /orders/:id',
       'GET /orders/kitchen',
       'GET /orders/table/:tableNumber'
     ]
@@ -54,6 +62,9 @@ app.use('/categories', categoryRoutes);
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/kitchen', kitchenRoutes);
+
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 export { app };
 export default app;

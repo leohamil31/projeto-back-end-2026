@@ -42,18 +42,18 @@ const foodCustomizationOptions = [
   { id: 'pimenta', name: 'Pimenta calabresa', price: 2 }
 ];
 
-const WINE_PRODUCT_IDS = ['vinho-toscano', 'chianti-classico', 'pinot-grigio', 'prosecco-veneto', 'montepulciano-dabruzzo'];
-const SODA_PRODUCT_IDS = ['coca-cola', 'guarana-antarctica', 'fanta-laranja'];
+const WINE_PRODUCT_NAMES = ['Vinho Toscano', 'Chianti Classico', 'Pinot Grigio delle Venezie', 'Prosecco Veneto', 'Montepulciano d’Abruzzo'];
+const SODA_PRODUCT_NAMES = ['Coca-Cola 600ml', 'Guaraná Antarctica 600ml', 'Fanta Laranja 600ml'];
 
 const getCustomizationOptions = (product) => {
-  if (WINE_PRODUCT_IDS.includes(product.id)) {
+  if (WINE_PRODUCT_NAMES.includes(product.name)) {
     return [
       { id: 'taca-vinho', name: 'Taça de vinho', price: 0, replacePrice: 18, inputType: 'radio', group: 'wine-format' },
       { id: 'garrafa-vinho', name: 'Garrafa de vinho', price: 0, replacePrice: product.price, inputType: 'radio', group: 'wine-format' }
     ];
   }
 
-  if (SODA_PRODUCT_IDS.includes(product.id)) {
+  if (SODA_PRODUCT_NAMES.includes(product.name)) {
     return [
       { id: 'lata', name: 'Lata 350 ml', price: 0, replacePrice: 7.5, inputType: 'radio', group: 'soda-format' },
       { id: 'garrafa-600ml', name: 'Garrafa 600 ml', price: 0, replacePrice: product.price, inputType: 'radio', group: 'soda-format' },
@@ -63,7 +63,8 @@ const getCustomizationOptions = (product) => {
     ];
   }
 
-  if (product.categoryId === 'bebidas') return [];
+  const category = state.categories.find((item) => item.id === product.categoryId);
+  if (category?.name === 'Bebidas') return [];
   return foodCustomizationOptions;
 };
 

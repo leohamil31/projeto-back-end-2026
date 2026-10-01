@@ -1,25 +1,25 @@
 create extension if not exists pgcrypto;
 
 create table if not exists public.categories (
-  id text primary key default gen_random_uuid()::text,
+  id uuid primary key default gen_random_uuid(),
   name text not null unique,
   description text not null,
   created_at timestamptz not null default now()
 );
 
 create table if not exists public.products (
-  id text primary key,
+  id uuid primary key default gen_random_uuid(),
   name text not null unique,
   description text not null,
   price numeric(10,2) not null check (price >= 0),
   image text not null,
   is_available boolean not null default true,
-  category_id text not null references public.categories(id),
+  category_id uuid not null references public.categories(id),
   created_at timestamptz not null default now()
 );
 
 create table if not exists public.orders (
-  id text primary key default gen_random_uuid()::text,
+  id uuid primary key default gen_random_uuid(),
   customer_name text not null,
   table_number integer not null check (table_number > 0),
   status text not null default 'Recebido' check (status in ('Recebido', 'Preparando', 'Pronto', 'Entregue')),
@@ -33,9 +33,9 @@ alter table public.orders add column if not exists payment_method text not null 
 alter table public.orders add column if not exists payment_status text not null default 'Aguardando no caixa';
 
 create table if not exists public.order_items (
-  id text primary key default gen_random_uuid()::text,
-  order_id text not null references public.orders(id) on delete cascade,
-  product_id text not null,
+  id uuid primary key default gen_random_uuid(),
+  order_id uuid not null references public.orders(id) on delete cascade,
+  product_id uuid not null references public.products(id),
   name text not null,
   quantity integer not null check (quantity > 0),
   unit_price numeric(10,2) not null check (unit_price >= 0),

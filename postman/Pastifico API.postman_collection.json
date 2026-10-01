@@ -2,12 +2,13 @@
   "info": {
     "_postman_id": "c2c1e6fd-7c62-4be9-84d3-f4bdff664180",
     "name": "Pastifico API",
-    "description": "Requisições para o autoatendimento, catálogo, cozinha e acompanhamento de pedidos do Pastifico.",
+    "description": "Requisições para o autoatendimento, catálogo, cozinha e acompanhamento de pedidos do Pastifico. Os ids são UUID e são capturados automaticamente nas variáveis da coleção pelos scripts de teste de cada requisição de criação.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     { "key": "baseUrl", "value": "http://localhost:3000" },
-    { "key": "productId", "value": "spaghetti-carbonara" },
+    { "key": "categoryId", "value": "" },
+    { "key": "productId", "value": "" },
     { "key": "orderId", "value": "" },
     { "key": "tableNumber", "value": "5" }
   ],
@@ -26,7 +27,12 @@
       "item": [
         {
           "name": "Listar categorias",
-          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categories" }
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categories" },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 200) {", "  const categories = pm.response.json();", "  if (Array.isArray(categories) && categories.length) {", "    pm.collectionVariables.set('categoryId', categories[0].id);", "  }", "}"] } }]
+        },
+        {
+          "name": "Buscar categoria por ID",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categories/{{categoryId}}" }
         },
         {
           "name": "Criar categoria",
@@ -34,8 +40,23 @@
             "method": "POST",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": { "mode": "raw", "raw": "{\n  \"name\": \"Especiais da casa\",\n  \"description\": \"Pratos especiais do Pastifico\"\n}", "options": { "raw": { "language": "json" } } },
-            "url": "{{baseUrl}}/categories"
+            "url": "{{baseUrl}}/categories",
+            "description": "A resposta inclui o ID (uuid); o script de teste salva automaticamente em categoryId."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 201) {", "  const category = pm.response.json();", "  if (category.id) {", "    pm.collectionVariables.set('categoryId', category.id);", "  }", "}"] } }]
+        },
+        {
+          "name": "Atualizar categoria",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"description\": \"Descrição atualizada via Postman\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": "{{baseUrl}}/categories/{{categoryId}}"
           }
+        },
+        {
+          "name": "Remover categoria",
+          "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/categories/{{categoryId}}" }
         }
       ]
     },
@@ -44,7 +65,8 @@
       "item": [
         {
           "name": "Listar produtos",
-          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/products" }
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/products" },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 200) {", "  const products = pm.response.json();", "  if (Array.isArray(products) && products.length) {", "    pm.collectionVariables.set('productId', products[0].id);", "  }", "}"] } }]
         },
         {
           "name": "Buscar produto por ID",
@@ -55,11 +77,11 @@
           "request": {
             "method": "POST",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Ravioli de teste\",\n  \"description\": \"Ravioli artesanal para testar a API\",\n  \"price\": 39.90,\n  \"image\": \"https://example.com/ravioli.jpg\",\n  \"isAvailable\": true,\n  \"categoryId\": \"massas\"\n}", "options": { "raw": { "language": "json" } } },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Ravioli de teste\",\n  \"description\": \"Ravioli artesanal para testar a API\",\n  \"price\": 39.90,\n  \"image\": \"https://example.com/ravioli.jpg\",\n  \"isAvailable\": true,\n  \"categoryId\": \"{{categoryId}}\"\n}", "options": { "raw": { "language": "json" } } },
             "url": "{{baseUrl}}/products",
-            "description": "A resposta inclui o ID; salve-o na variável productId para testar GET ou PUT."
+            "description": "Rode antes 'Listar categorias' (ou 'Criar categoria') para preencher {{categoryId}}. A resposta inclui o ID; o script de teste salva automaticamente em productId."
           },
-          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 201) {", "  const product = pm.response.json();", "  if (product.id) {", "    pm.collectionVariables.set('productId', product.id);", "    pm.environment.set('productId', product.id);", "  }", "}"] } }]
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 201) {", "  const product = pm.response.json();", "  if (product.id) {", "    pm.collectionVariables.set('productId', product.id);", "  }", "}"] } }]
         },
         {
           "name": "Atualizar produto",
@@ -69,6 +91,10 @@
             "body": { "mode": "raw", "raw": "{\n  \"price\": 42.50,\n  \"isAvailable\": true\n}", "options": { "raw": { "language": "json" } } },
             "url": "{{baseUrl}}/products/{{productId}}"
           }
+        },
+        {
+          "name": "Remover produto",
+          "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/products/{{productId}}" }
         }
       ]
     },
@@ -80,14 +106,19 @@
           "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/orders" }
         },
         {
+          "name": "Buscar pedido por ID",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/orders/{{orderId}}" }
+        },
+        {
           "name": "Criar pedido de exemplo",
           "request": {
             "method": "POST",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"customerName\": \"Cliente Postman\",\n  \"tableNumber\": 5,\n  \"items\": [\n    {\n      \"productId\": \"spaghetti-carbonara\",\n      \"name\": \"Spaghetti Carbonara\",\n      \"quantity\": 1,\n      \"unitPrice\": 42.90,\n      \"options\": [\"Parmesão ralado na hora\"]\n    }\n  ]\n}", "options": { "raw": { "language": "json" } } },
-            "url": "{{baseUrl}}/orders"
+            "body": { "mode": "raw", "raw": "{\n  \"customerName\": \"Cliente Postman\",\n  \"tableNumber\": 5,\n  \"paymentMethod\": \"PIX\",\n  \"items\": [\n    {\n      \"productId\": \"{{productId}}\",\n      \"quantity\": 1,\n      \"options\": [\"Parmesão ralado na hora\"]\n    }\n  ]\n}", "options": { "raw": { "language": "json" } } },
+            "url": "{{baseUrl}}/orders",
+            "description": "Rode antes 'Listar produtos' (ou 'Criar produto') para preencher {{productId}}."
           },
-          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 201) {", "  const order = pm.response.json();", "  if (order.id) {", "    pm.collectionVariables.set('orderId', order.id);", "    pm.environment.set('orderId', order.id);", "  }", "}"] } }]
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if (pm.response.code === 201) {", "  const order = pm.response.json();", "  if (order.id) {", "    pm.collectionVariables.set('orderId', order.id);", "  }", "}"] } }]
         },
         {
           "name": "Atualizar status do pedido",
@@ -97,6 +128,10 @@
             "body": { "mode": "raw", "raw": "{\n  \"status\": \"Preparando\"\n}", "options": { "raw": { "language": "json" } } },
             "url": "{{baseUrl}}/orders/{{orderId}}/status"
           }
+        },
+        {
+          "name": "Remover pedido",
+          "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/orders/{{orderId}}" }
         }
       ]
     },
